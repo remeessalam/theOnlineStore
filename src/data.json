@@ -1,0 +1,172 @@
+{
+  "mencarousalImage": [
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Mugs-joyful-wednesday-homepage-banner_1.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/web_4.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Plaid-Shirts-Offer-Campaign_HomePage-Banner.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-Banner_11.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/web-banne.png?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-Banner_copy_2.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-Banner_17.jpg?format=webp&w=1500&dpr=2.0"
+    }
+  ],
+  "mencategories": [
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Big-Tile-OVERSIZED-T-SHIRTS_2_Cd7zgtL.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "OVERSIZED T-SHIRT",
+      "type": "men",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Big-Tile-JEANS_1_NPrx5ln.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "JEANS",
+      "type": "men",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Big-Tile-SHIRTS_2_zNRzgyU.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "SHIRT",
+      "type": "men",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Small-Tile-Sneakers_2_ZXswKyX.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "SNEAKERS",
+      "type": "men",
+      "stock": "comming-soon"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Small-Tile-OVERSIZED-POLOS_1_9oTwt12.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "OVERSIZED POLOS",
+      "type": "men",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Small-Tile-OS-Full-Sleeve_EAeqCzz.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "OVERSIZED FULL SLEEVE T-SHIRT",
+      "type": "men",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Small-Tile-Jackets_4_7tG57KX.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "JACKETS",
+      "type": "men",
+      "stock": "comming-soon"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Men-Small-Tile-2-T-SHIRTS_weycL70.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "T-SHIRTS",
+      "type": "men",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Men-Small-Tile-2-sweatshirts_Y0nOxco.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "SWEATSHIRTS",
+      "type": "men",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Men-Small-Tile-2-cargo-pants_InF2Mbf.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "CARGO PANTS",
+      "type": "men",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Men-Small-Tile-2-hoodies_1_hdsg0yP.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "HOODIES",
+      "type": "men",
+      "stock": "comming-soon"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Men-Small-Tile-2-shorts_OcYsLUj.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "SHORTS",
+      "type": "men",
+      "stock": "true"
+    }
+  ],
+  "womencarousalImage": [
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/web-banner_15.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-Banner_13_LnsmiqJ.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/web-banner_14.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-Banner_11_TTojecY.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/web_9_dEWO4k4.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/web_copy_2.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-Banner_9_2fZ01l4.jpg?format=webp&w=1500&dpr=2.0"
+    }
+  ],
+  "Womencategories": [
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Women-Small-Tile-1-OST_HT1axGq.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "OVERSIZED T-SHIRT",
+      "type": "women",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Women-Small-Tile-1-jeans_N5MrDsy.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "JEANS",
+      "type": "women",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Women-App-Tile_shirts_lrYaLSW.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "SHIRT",
+      "type": "women",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Small-Tile-Sneakers_2_ZXswKyX.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "SNEAKERS",
+      "type": "women",
+      "stock": "comming-soon"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Women-Small-Tile-1-jackerts_AsCu8Kd.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "JACKETS",
+      "type": "women",
+      "stock": "comming-soon"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Small-Tile-Hoodies--Sweatshirts_WqxXM6J.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "SWEATSHIRTS",
+      "type": "women",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Women-Small-Tile-1-joggers_IC7TQay.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "CARGO PANTS",
+      "type": "women",
+      "stock": "true"
+    },
+    {
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Women-App-Tile_tops_xl78xGE.jpg?format=webp&w=480&dpr=2.0",
+      "categoryType": "HOODIES",
+      "type": "women",
+      "stock": "comming-soon"
+    }
+  ]
+}
