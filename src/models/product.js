@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
@@ -8,7 +8,7 @@ const productSchema = new Schema({
     required: true,
   },
   price: {
-    type: mongoose.Decimal128,
+    type: Number,
     required: true,
   },
   sizeChart: [
@@ -43,6 +43,13 @@ const productSchema = new Schema({
       },
     },
   ],
+  categoryOf: {
+    type: Schema.Types.ObjectId,
+    ref: "Category",
+    required: true,
+  },
 });
 
-export default mongoose.model("Products", productSchema);
+// export default mongoose.model("Products", productSchema);
+export default mongoose.models.Products ||
+  mongoose.model("Products", productSchema);
