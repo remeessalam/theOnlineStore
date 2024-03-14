@@ -43,6 +43,10 @@ const productSchema = new Schema({
       },
     },
   ],
+  categoryOf: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Category",
+  },
 });
 
 // export default mongoose.modƒel("Products", productSchema);

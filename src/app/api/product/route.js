@@ -15,29 +15,27 @@ export async function GET(req) {
   }
 }
 
-export async function POST(req) {
+export async function POST(request) {
   try {
     mongoose
       .connect(process.env.MONGOURL)
       .then((res) => console.log("db connected"))
       .catch((err) => console.log("error", err));
-    const { formData } = req.json();
-    console.log(formData, req.body, "thisisreqpageno");
-    return Response.json({ satus: "hai" });
+    const { data } = await request.json();
+    console.log(data, "thisisreqpageno");
+    // return Response.json({ status: "hai" });
     const product = new productSchemas({
-      productName: req.productInput.productName,
-      price: req.productInput.price,
-      sizeChart: req.productInput.sizeChart,
-      stockCount: req.productInput.stockCount,
-      productDetails: req.productInput.productDetails,
-      productDescription: req.productInput.productDescription,
-      image: req.productInput.image,
-      categoryOf: mongoose.Types.ObjectId.createFromHexString(
-        req.productInput.categoryOf
-      ),
+      productName: data.productName,
+      price: data.price,
+      sizeChart: data.sizeChart,
+      stockCount: data.stockCount,
+      productDetails: data.productDetails,
+      productDescription: data.productDescription,
+      image: data.image,
+      categoryOf: mongoose.Types.ObjectId.createFromHexString(data.categoryOf),
     });
     const result = await product.save();
-    // return Response.json({ result });
+    return Response.json({ result });
   } catch (error) {
     console.log(error, "thisiserror");
     throw new Error("Failed to create product");

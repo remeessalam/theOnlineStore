@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+// import axios from "axios";
 const GymPage = () => {
   const [sizeChart, setSizeChart] = useState({
     size: "",
@@ -17,7 +18,7 @@ const GymPage = () => {
     price: "",
     sizeChart: [],
     stockCount: "",
-    produceDetails: "",
+    productDetails: "",
     productDescription: "",
     image: [],
     categoryOf: "",
@@ -102,13 +103,19 @@ const GymPage = () => {
   const addproduct = async (e) => {
     console.log("function_is_called");
     e.preventDefault();
-    // console.log(data, "thisisdatfromapollogrpahql");
+    let data = { name: "remees", age: 26, job: "developer", marriage: true };
+    console.log(data, "thisisdatfromapollogrpahql");
     const response = await fetch("/api/product", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({ data: formData }),
     });
-    console.log(response, "thisisresponseasldkfjlkajsd");
+    // const response = await axios.post("/api/product", JSON.stringify(data), {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+    console.log(response, formData, "thisisresponseasldkfjlkajsd");
   };
   return (
     <div className="flex flex-col">
@@ -178,8 +185,8 @@ const GymPage = () => {
               <input
                 className="border rounded-md p-1 [&::-webkit-inner-spin-button]:appearance-none [appearance:textfield] focus:outline-none"
                 type="text"
-                name="produceDetails"
-                value={formData.produceDetails}
+                name="productDetails"
+                value={formData.productDetails}
                 onChange={handleChange}
               />
             </div>
@@ -272,7 +279,7 @@ const GymPage = () => {
           })}
         </h1>
         <h1>stockCount: {formData.stockCount}</h1>
-        <h1>produceDetails: {formData.produceDetails}</h1>
+        <h1>productDetails: {formData.productDetails}</h1>
         <h1>productDescription: {formData.productDescription}</h1>
         <h1 className="flex flex-row flex-wrap gap-2">
           image:{" "}
