@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { fetchData, fetchproductData } from "./querys";
 import { createProduct } from "./mutation";
 import { useMutation, gql } from "@apollo/client";
+
 const GymPage = () => {
   const [sizeChart, setSizeChart] = useState({
     size: "",
@@ -104,71 +105,61 @@ const GymPage = () => {
   //   stockCount: formData?.stockCount,
   //   categoryOf: formData?.categoryOf,
   // };
-  const productInput = `{
-    productName: String!
-    price: Int!
-    sizeChart: [sizeChartInput]!
-    stockCount: Int!
-    productDetails: String!
-    productDescription: String!
-    image: [ImageInput]
-    categoryOf: ID
-  }`;
+
   const CREATE_PRODUCT_MUTATION = gql`
-    mutation CreateProduct(
-      $productName: String!
-      $price: Int!
-      $sizeChart: [sizeChartInput]!
-      $stockCount: Int!
-      $productDetails: String!
-      $productDescription: String!
-      $image: [ImageInput]
-      $categoryOf: ID
-    ) {
-      createProduct(
-        productName: $productName
-        price: $price
-        sizeChart: $sizeChart
-        stockCount: $stockCount
-        productDetails: $productDetails
-        productDescription: $productDescription
-        image: $image
-        categoryOf: $categoryOf
-      ) {
+    mutation CreateProduct($productInput: ProductInput) {
+      createProduct(productInput: $productInput) {
         productName
         price
       }
     }
   `;
-
-  const [createProduct, { data, loading, error }] = useMutation(
-    CREATE_PRODUCT_MUTATION,
-    {
-      variables: { productInput },
+  const GET_ALL_PRODUCT = gql`
+    query Products {
+      products {
+        id
+        productName
+        price
+        sizeChart {
+          size
+          stock
+        }
+        stockCount
+        productDetails
+        productDescription
+        images {
+          url
+        }
+      }
     }
+  `;
+
+  // console.log(data, "thaisdsfgksdjfglksjdfglkjsdfg");
+  const [createProduct, { data, loading, error }] = useMutation(
+    CREATE_PRODUCT_MUTATION
   );
-  const addproduct = (e) => {
+  console.log(error, "thisiserrorsajdfljdsfhsadf");
+  const addproduct = async (e) => {
     console.log("function_is_called");
     e.preventDefault();
-    console.log(data, "thisisdatfromapollogrpahql");
+    // console.log(data, "thisisdatfromapollogrpahql");
     createProduct({
       variables: {
-        productName: productInput.productName,
-        price: productInput.price,
-        sizeChart: productInput.sizeChart, // Assuming productInput.sizeChart is already properly formatted
-        stockCount: productInput.stockCount,
-        productDetails: productInput.productDetails,
-        productDescription: productInput.productDescription,
-        image: productInput.image,
-        categoryOf: productInput.categoryOf,
+        productInput: {
+          productName: productInput.productName,
+          price: productInput.price,
+          sizeChart: productInput.sizeChart, // Assuming productInput.sizeChart is already properly formatted
+          stockCount: productInput.stockCount,
+          productDetails: productInput.productDetails,
+          productDescription: productInput.productDescription,
+          image: productInput.image,
+          categoryOf: productInput.categoryOf,
+        },
       },
     });
-    // const data = createProduct(formData);
-    // data
-    //   .then((res) => {
-    //     console.log(res, "thisisdatafromproductCreate");
-    //   })
-    //   .catch((err) => console.log(err));
+
+    // const data = await createProduct(formData);
+    console.log(data);
   };
   return (
     <div className="flex flex-col">
@@ -321,10 +312,13 @@ const GymPage = () => {
         <h1>price: {formData.price}</h1>
         <h1 className="flex flex-row flex-wrap gap-2">
           sizeChart:{" "}
-          {formData?.sizeChart.map((item) => {
+          {formData?.sizeChart.map((item, i) => {
             console.log(item, "thisisiteminformdata");
             return (
-              <div className="bg-blue-600 text-white p-2 gap-2 rounded-md">
+              <div
+                key={i}
+                className="bg-blue-600 text-white p-2 gap-2 rounded-md"
+              >
                 <h1>stock: {item.stock}</h1>
                 <h1>size: {item.size}</h1>
               </div>
@@ -336,10 +330,13 @@ const GymPage = () => {
         <h1>productDescription: {formData.productDescription}</h1>
         <h1 className="flex flex-row flex-wrap gap-2">
           image:{" "}
-          {formData?.image.map((item) => {
+          {formData?.image.map((item, i) => {
             console.log(item, "thisisitem");
             return (
-              <div className="bg-blue-600 text-white p-2 gap-2 rounded-md">
+              <div
+                key={i}
+                className="bg-blue-600 text-white p-2 gap-2 rounded-md"
+              >
                 <h1>url: {item.url}</h1>
               </div>
             );
