@@ -7,10 +7,14 @@ const categorySchema = new Schema({
     type: String,
     required: true,
   },
+  categoryFor: {
+    type: String,
+    required: true,
+  },
   image: [
     {
-      url: {
-        type: String,
+      imageFile: {
+        type: Object,
         required: true,
       },
     },

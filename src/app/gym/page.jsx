@@ -7,10 +7,10 @@ const GymPage = () => {
     stock: "",
   });
   const [setImage, setSetImage] = useState({});
-
+  const [csetImage, setCsetImage] = useState({});
   const [categoryFormData, setcategoryFormData] = useState({
     categoryName: "",
-    image: "",
+    image: [],
   });
 
   const [formData, setFormData] = useState({
@@ -34,7 +34,6 @@ const GymPage = () => {
     fetch("/api/category").then((res) => {
       res.json().then((categories) => {
         // setCategories(categories);
-        console.log(categories, "thisiscategories");
       });
     });
   };
@@ -42,17 +41,14 @@ const GymPage = () => {
     fetch("/api/product").then((res) => {
       res.json().then((categories) => {
         // setCategories(categories);
-        console.log(categories, "thisiscategories");
       });
     });
   };
-  // console.log(formData, "thisisformdataingobal");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     if ((value <= 0 && value === "-1") || value === "00") return;
 
-    console.log(e);
     setFormData({ ...formData, [name]: value });
     console.log(formData, "form data");
   };
@@ -60,7 +56,6 @@ const GymPage = () => {
   const handleImageChange = (e) => {
     const { name, value } = e.target;
     setSetImage({ url: value });
-    console.log(setImage, "-setimage", name, value, "thisformdataisinimage");
   };
 
   const addImageToFormData = (e) => {
@@ -72,12 +67,10 @@ const GymPage = () => {
         image: [...prevFormData.image, setImage],
       };
     });
-    console.log(formData, "thisformdataisinimage");
   };
 
   const addsizeChart = (e) => {
     const { name, value } = e.target;
-    console.log(typeof value, "thisisnumber");
     if ((value <= 0 && value === "-1") || value === "00") return;
     setSizeChart({ ...sizeChart, [name]: value });
   };
@@ -87,24 +80,32 @@ const GymPage = () => {
     const newSizeChart = [...formData.sizeChart, sizeChart];
     setFormData({ ...formData, sizeChart: newSizeChart });
     setSizeChart({ size: "", stock: "" });
-    console.log(formData, "thisisformdatainhandlesi");
   };
 
-  const createCategoryHandle = () => {
+  const createCategoryHandle = (e) => {
     const { name, value } = e.target;
     setcategoryFormData({ ...categoryFormData, [name]: value });
   };
+  const addcategoryimagetoForm = () => {
+    setcategoryFormData((pre) => {
+      return { ...pre, image: [...pre.image, csetImage] };
+    });
+    setCsetImage({});
+    document.querySelector('input[name="image"]').value = "";
+  };
 
-  const submitCategory = (e) => {
+  const submitCategory = async (e) => {
     e.preventDefault();
-    formData;
+    const response = await fetch("/api/category", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ data: categoryFormData }),
+    });
   };
 
   const addproduct = async (e) => {
-    console.log("function_is_called");
     e.preventDefault();
     let data = { name: "remees", age: 26, job: "developer", marriage: true };
-    console.log(data, "thisisdatfromapollogrpahql");
     const response = await fetch("/api/product", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -115,7 +116,6 @@ const GymPage = () => {
     //     "Content-Type": "application/json",
     //   },
     // });
-    console.log(response, formData, "thisisresponseasldkfjlkajsd");
   };
   return (
     <div className="flex flex-col">
@@ -251,9 +251,13 @@ const GymPage = () => {
               className="border rounded-md p-1 [&::-webkit-inner-spin-button]:appearance-none [appearance:textfield] focus:outline-none"
               type="text"
               name="image"
-              value={categoryFormData.image}
-              onChange={createCategoryHandle}
+              value={csetImage?.url}
+              onChange={(e) => {
+                const { value } = e.target;
+                setCsetImage({ url: value });
+              }}
             />
+            <button onClick={addcategoryimagetoForm}>add category image</button>
           </div>
           <button
             className="bg-blue-900 text-white rounded-md pt-1 pb-1"
@@ -268,10 +272,12 @@ const GymPage = () => {
         <h1>price: {formData.price}</h1>
         <h1 className="flex flex-row flex-wrap gap-2">
           sizeChart:{" "}
-          {formData?.sizeChart.map((item) => {
-            console.log(item, "thisisiteminformdata");
+          {formData?.sizeChart.map((item, i) => {
             return (
-              <div className="bg-blue-600 text-white p-2 gap-2 rounded-md">
+              <div
+                key={i}
+                className="bg-blue-600 text-white p-2 gap-2 rounded-md"
+              >
                 <h1>stock: {item.stock}</h1>
                 <h1>size: {item.size}</h1>
               </div>
@@ -283,10 +289,12 @@ const GymPage = () => {
         <h1>productDescription: {formData.productDescription}</h1>
         <h1 className="flex flex-row flex-wrap gap-2">
           image:{" "}
-          {formData?.image.map((item) => {
-            console.log(item, "thisisitem");
+          {formData?.image.map((item, i) => {
             return (
-              <div className="bg-blue-600 text-white p-2 gap-2 rounded-md">
+              <div
+                key={i}
+                className="bg-blue-600 text-white p-2 gap-2 rounded-md"
+              >
                 <h1>url: {item.url}</h1>
               </div>
             );

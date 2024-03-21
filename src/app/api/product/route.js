@@ -9,6 +9,7 @@ export async function GET(req) {
       .then((res) => console.log("db connected"))
       .catch((err) => console.log("error", err));
     const products = await productSchemas.find();
+    // .populate("Category")
     return Response.json({ products });
   } catch (error) {
     throw new Error("Failed to fetch products");
@@ -25,7 +26,7 @@ export async function POST(request) {
     console.log(data, "thisisreqpageno");
     // return Response.json({ status: "hai" });
     const product = new productSchemas({
-      productName: data.productName,
+      productName: data.productName, 
       price: data.price,
       sizeChart: data.sizeChart,
       stockCount: data.stockCount,
