@@ -33,6 +33,7 @@ export async function POST(request) {
       productDetails: data.productDetails,
       productDescription: data.productDescription,
       image: data.image,
+      tag: data.tag,
       categoryOf: mongoose.Types.ObjectId.createFromHexString(data.categoryOf),
     });
     const result = await product.save();

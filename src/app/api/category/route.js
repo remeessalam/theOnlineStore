@@ -32,14 +32,45 @@ export async function POST(request) {
       .catch((err) => console.log("error", err));
     const { data } = await request.json();
     console.log(data, "this is args");
-    const category = new categorySchemas({
-      categoryName: data.categoryName,
-      categoryFor: data.categoryFor,
-      image: data.image,
-    });
-    const result = await category.save();
-    console.log(result);
-    return Response.json({ result });
+    if (data) {
+      const existingCategory = await categorySchemas.findOne({
+        categoryName: data.categoryName,
+        categoryFor: data.categoryFor,
+      });
+      if (existingCategory) {
+        console.log("true");
+        cloudinary.api
+          .delete_resources(
+            data.image.map((image) => image?.imageFile?.public_id),
+            {
+              type: "upload",
+              resource_type: "image",
+            }
+          )
+          .then(console.log("deleteed"))
+          .catch((err) => {
+            console.log(err);
+            return Response.json({
+              statu: false,
+              msg: "failed to delete image",
+            });
+          });
+        return Response.json({
+          status: false,
+          statusCode: 400,
+          msg: "Category already exists",
+        });
+      }
+      const category = new categorySchemas({
+        categoryName: data.categoryName,
+        categoryFor: data.categoryFor,
+        image: data.image,
+      });
+      const result = await category.save();
+      console.log(result);
+      return Response.json({ status: true, result });
+    }
+    return Response.json({ status: false, msg: "no data founded" });
   } catch (error) {
     // throw new Error("Failed to create category");
     return Response.json({ error: error });

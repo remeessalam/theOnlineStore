@@ -37,7 +37,15 @@ const productSchema = new Schema({
   },
   image: [
     {
-      url: {
+      imageFile: {
+        type: Object,
+        required: true,
+      },
+    },
+  ],
+  tag: [
+    {
+      tag: {
         type: String,
         required: true,
       },
