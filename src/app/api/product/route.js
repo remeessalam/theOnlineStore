@@ -26,7 +26,7 @@ export async function POST(request) {
     console.log(data, "thisisreqpageno");
     // return Response.json({ status: "hai" });
     const product = new productSchemas({
-      productName: data.productName, 
+      productName: data.productName,
       price: data.price,
       sizeChart: data.sizeChart,
       stockCount: data.stockCount,
@@ -37,7 +37,7 @@ export async function POST(request) {
       categoryOf: mongoose.Types.ObjectId.createFromHexString(data.categoryOf),
     });
     const result = await product.save();
-    return Response.json({ result });
+    return Response.json({ status: true, result });
   } catch (error) {
     console.log(error, "thisiserror");
     throw new Error("Failed to create product");
